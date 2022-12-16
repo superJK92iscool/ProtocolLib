@@ -301,27 +301,27 @@ public class ProtocolLib extends JavaPlugin {
 		logger.addHandler(this.redirectHandler);
 	}
 
-//	@Override
-//	public void onEnable() {
-//		try {
-//			Server server = this.getServer();
-//			PluginManager manager = server.getPluginManager();
-//
+	@Override
+	public void onEnable() {
+		try {
+			Server server = this.getServer();
+			PluginManager manager = server.getPluginManager();
+
 			// Silly plugin reloaders!
-//			if (protocolManager == null) {
-//				Logger directLogging = Logger.getLogger("Minecraft");
-//				String[] message = new String[]{
-//						" ProtocolLib does not support plugin reloaders! ", " Please use the built-in reload command! "
-//				};
+			if (protocolManager == null) {
+				Logger directLogging = Logger.getLogger("Minecraft");
+				String[] message = new String[]{
+						" ProtocolLib does not support plugin reloaders! ", " Please use the built-in reload command! "
+				};
 
 				// Print as severe
-//				for (String line : ChatExtensions.toFlowerBox(message, "*", 3, 1)) {
-//					directLogging.severe(line);
-//				}
+				for (String line : ChatExtensions.toFlowerBox(message, "*", 3, 1)) {
+					directLogging.severe(line);
+				}
 
-//				this.disablePlugin();
-//				return;
-//			}
+				//this.disablePlugin();
+				return;
+			}
 
 			// Check for incompatible plugins
 			this.checkForIncompatibility(manager);
